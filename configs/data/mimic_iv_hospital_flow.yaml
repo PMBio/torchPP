@@ -1,0 +1,4 @@
+dataset_type: mimic_iv
+dataset:
+  dataset_name: hospital_flow
+  mimic_root: mimic_iv

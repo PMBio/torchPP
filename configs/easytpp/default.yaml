@@ -1,0 +1,42 @@
+# Default training configuration for EasyTPP benchmark datasets.
+#
+# EasyTPP datasets use repeating event types (non-terminating). The
+# `terminating` flag is a class-level attribute on EasyTPPDataset.
+#
+# Override the dataset via -c data/easytpp_<name> or directly:
+#   python train.py -c easytpp/default dataset.dataset_name=stackoverflow
+
+device: auto
+
+dataset_type: easytpp
+
+defaults:
+  - data/easytpp_taxi
+  - batching/bucket_default_small
+  - training/easytpp_default
+  - wandb/disabled
+  - eval/normal
+
+# Merge in the easytpp_root path (dataset_name comes from the data/ preset above).
+dataset:
+  easytpp_root: easytpp
+
+
+arch:
+  seed: null
+  num_ci_integration_steps: 100
+
+save:
+  path: null        # null → auto-generate from model_type
+  overwrite: false
+  auto_increment: true
+
+profiling:
+  enable: false
+  steps: 20
+  output: profile_trace.json
+
+compile:
+  enable: false
+  backend: inductor
+  mode: default

@@ -1,0 +1,4 @@
+dataset_type: easytpp
+dataset:
+  dataset_name: volcano
+  # 1 event type; train/dev/test: 400 / 50 / 181

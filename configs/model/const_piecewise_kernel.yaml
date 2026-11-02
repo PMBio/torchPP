@@ -1,0 +1,7 @@
+# Constant-baseline + piecewise-constant-kernel Hawkes process.
+# Step-function kernel allows flexible excitation decay shapes.
+model_type: const_piecewise_kernel
+
+arch:
+  spline_kernel_K: 4
+  spline_T_factor: 1.25

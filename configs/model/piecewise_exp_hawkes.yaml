@@ -1,0 +1,7 @@
+# Piecewise-constant-baseline + exponential-kernel Hawkes process.
+# Step-function baseline with flexible excitation kernel.
+model_type: piecewise_exp_hawkes
+
+arch:
+  spline_K: 5
+  spline_T_factor: 1.25

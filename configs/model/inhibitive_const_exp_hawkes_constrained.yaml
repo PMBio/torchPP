@@ -1,0 +1,8 @@
+# Inhibitive Hawkes — constant baseline + exp kernel, with constrained (positive-only) kernel.
+# Sanity check: equivalent to excitatory Hawkes but using numerical CI.
+model_type: inhibitive_const_exp_hawkes
+
+arch:
+  num_ci_integration_steps: 100
+  inhibitive_clamping_fn: relu
+  constrain_kernel: true

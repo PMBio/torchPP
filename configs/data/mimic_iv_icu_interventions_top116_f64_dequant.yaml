@@ -1,0 +1,14 @@
+# MIMIC-IV ICU interventions, top-116 types, float64, dequantized event times (main runs, knot sweep,
+# non-stationarity control). Same stays, splits, vocabulary, T_obs and 316-event truncation as
+# mimic_iv_icu_interventions_top116_f64.yaml; each event is placed uniformly within its recorded minute
+# (truncated at the ICU outtime, seed 0) and the events of a stay are re-sorted.
+# Build (after the float64 cohort):
+#   python scripts/data_prep/make_mimic_iv_dequantized.py \
+#       --src-root mimic_iv_f64 --out-root mimic_iv_f64_dequant --seed 0
+#   python scripts/data_prep/verify_mimic_iv_dequantized.py \
+#       --orig-root mimic_iv_f64 --new-root mimic_iv_f64_dequant
+dataset_type: mimic_iv
+dataset:
+  dataset_name: icu_interventions
+  mimic_root: mimic_iv_f64_dequant
+  top_k_event_types: 116

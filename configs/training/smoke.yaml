@@ -1,0 +1,17 @@
+# Quick smoke-test run — 10 steps, then the test evaluation.
+# Usage: python train.py -c easytpp/default -c data/easytpp_taxi -c model/poisson -c training/smoke
+training:
+  num_steps: 10
+  eval_freq: 10
+  scheduler_type: none
+  grad_clip: 1.0
+  early_stopping_patience: 0
+  early_stopping_min_delta: 0.001
+
+eval:
+  run_test_eval: true
+  limit_test_size: 10
+
+dataset:
+  limit_train_size: 500
+  limit_val_size: 100

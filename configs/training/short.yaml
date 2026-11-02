@@ -1,0 +1,12 @@
+# Short training run — 500 steps with step-LR decay (default).
+training:
+  num_steps: 500
+  learning_rate: 1.0
+  weight_decay: 0.0
+  eval_freq: 100
+  scheduler_type: step
+  scheduler_step_size: 100
+  scheduler_gamma: 0.1
+  grad_clip: 1.0
+  early_stopping_patience: 0     # 0 = disabled; set e.g. 5 to stop after 5 evals without improvement
+  early_stopping_min_delta: 0.001

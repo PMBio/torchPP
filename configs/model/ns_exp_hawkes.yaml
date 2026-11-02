@@ -1,0 +1,8 @@
+# Const-baseline + non-stationary exponential-kernel Hawkes process.
+# α(t), β(t) are linear splines over absolute time (interpolated at the trigger's
+# time); Δt-shape stays exponential. Knots use the baseline-scale time anchor.
+model_type: ns_exp_hawkes
+
+arch:
+  spline_K: 5          # absolute-time knots for the non-stationary α, β
+  spline_T_factor: 1.25

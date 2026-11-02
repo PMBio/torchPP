@@ -1,0 +1,12 @@
+model_type: neural_mlp
+
+arch:
+  # 3x more quadrature points than the default 100 to reduce survival-term
+  # underestimation for the flexible MLP intensity (no analytical CI available).
+  num_ci_integration_steps: 300
+
+# MLP intensity head settings (uncomment to override defaults)
+# arch:
+#   mlp_n_hidden: 128
+#   mlp_n_layers: 2
+#   mlp_time_embd_dim: null  # null = same as n_embd

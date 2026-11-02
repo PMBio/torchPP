@@ -1,0 +1,5 @@
+# IntensityFree (Shchur et al., ICLR 2020) — log-normal mixture on the inter-event
+# time, mark categorical independent of time given history. Faithful EasyTPP/Shchur
+# replica with a GRU encoder; cumulative intensity is the closed-form -log S of the
+# mixture. Set arch.iftpp_encoder=transformer for a shared-encoder comparison.
+model_type: intensity_free

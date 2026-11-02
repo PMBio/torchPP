@@ -1,0 +1,4 @@
+dataset_type: easytpp
+dataset:
+  dataset_name: earthquake
+  # 7 event types; train/dev/test: 3000 / 400 / 900

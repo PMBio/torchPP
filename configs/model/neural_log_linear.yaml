@@ -1,0 +1,2 @@
+# Neural Log-Linear Process — transformer-parametrized log-linear intensity per inter-event interval.
+model_type: neural_log_linear

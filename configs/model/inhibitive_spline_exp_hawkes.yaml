@@ -1,0 +1,9 @@
+# Inhibitive Hawkes — spline baseline + exp kernel. Clamping function applied to raw intensity sum.
+# Most expressive inhibitive model; uses numerical cumulative-intensity integration.
+model_type: inhibitive_spline_exp_hawkes
+
+arch:
+  spline_K: 5
+  spline_T_factor: 1.25
+  num_ci_integration_steps: 100
+  inhibitive_clamping_fn: softplus

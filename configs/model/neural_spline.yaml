@@ -1,0 +1,10 @@
+# Neural Spline Process — transformer-parametrized linear spline intensity per inter-event interval.
+# Knot count, extent, and schedule are controlled by the spline_kernel_* arch fields,
+# matching the relative-time convention used by Hawkes kernel models.
+model_type: neural_spline
+
+arch:
+  spline_kernel_K: 10
+  spline_kernel_T_factor: 5.0
+  spline_kernel_knot_schedule: geometric
+  spline_kernel_knot_power: 2.0

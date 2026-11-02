@@ -1,0 +1,7 @@
+# Constant-baseline + spline-kernel Hawkes process.
+# Spline kernel allows flexible excitation decay shapes.
+model_type: const_spline_kernel
+
+arch:
+  spline_kernel_K: 4
+  spline_T_factor: 1.25

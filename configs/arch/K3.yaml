@@ -1,0 +1,3 @@
+# Override: 3 knots/bins for baseline spline / piecewise models
+arch:
+  spline_K: 3

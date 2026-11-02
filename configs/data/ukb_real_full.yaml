@@ -1,0 +1,8 @@
+dataset_type: ukb
+dataset:
+  data_dir: ukb_real_data
+  train_file: train.bin
+  val_file: val.bin
+  test_file: val.bin
+  limit_train_size: null
+  limit_val_size: 2000

@@ -1,0 +1,11 @@
+batching:
+  batch_size: 32
+  use_bucket_batching: True
+  num_buckets: 10
+  dynamic_batch_size: True
+  target_total_events: null
+  max_sequence_length: null
+  truncation_strategy: right
+  analyze_lengths: False
+  accumulate_gradients: 4
+  auto_accumulate_gradients: false

@@ -1,0 +1,7 @@
+# Separate environment (Python 3.12) for the tick reproduction; tick is not a torchpp dependency.
+#   uv venv .venv-tick --python 3.12 && source .venv-tick/bin/activate
+#   uv pip install -r paper/tick/requirements.txt && uv pip install -e .
+tick==0.8.0.2
+numpydoc  # undeclared tick dependency; without it tick's estimators fail at construction
+numpy
+scipy

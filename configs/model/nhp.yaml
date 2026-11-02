@@ -1,0 +1,8 @@
+# Neural Hawkes Process (Mei & Eisner, NeurIPS 2017) — continuous-time LSTM with a
+# self-modulating ScaledSoftplus intensity. Hidden dim = arch.n_embd. Cumulative
+# intensity is numerical (ScaledSoftplus has no closed form), matching EasyTPP.
+# The training survival term uses num_ci_integration_steps trapezoid points in
+# every inter-event interval — 20 matches EasyTPP's loss_integral_num_sample_per_step.
+model_type: nhp
+arch:
+  num_ci_integration_steps: 20

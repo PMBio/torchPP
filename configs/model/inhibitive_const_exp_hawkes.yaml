@@ -1,0 +1,7 @@
+# Inhibitive Hawkes — constant baseline + exp kernel. Clamping function applied to raw intensity sum.
+# Supports inhibitory interactions; uses numerical cumulative-intensity integration.
+model_type: inhibitive_const_exp_hawkes
+
+arch:
+  num_ci_integration_steps: 100
+  inhibitive_clamping_fn: softplus

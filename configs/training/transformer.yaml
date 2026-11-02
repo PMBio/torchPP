@@ -1,0 +1,36 @@
+# Training config for transformer-based neural TPP models.
+#
+# Uses cosine annealing with linear warmup — the standard schedule for
+# transformer training (GPT, ViT, etc.).  The warmup phase stabilises
+# early updates when attention weights are still random; the cosine
+# decay provides smooth annealing without the staircase discontinuities
+# of StepLR, spending more time near the peak LR where learning is most
+# effective.
+#
+# Usage:
+#   python train.py -c easytpp/default -c training/transformer \
+#       -c model/neural_poisson arch.n_layer=2 arch.n_head=2 arch.n_embd=64
+#
+# The schedule shape (50k steps, 1000-step warmup, peak LR 1e-3):
+#
+#   LR  ^
+#       |  /‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\
+#       | /                          \
+#       |/                            \_______
+#       +---------------------------------->  step
+#       0   1000                   50000
+#           warmup    cosine decay
+training:
+  num_steps: 50000
+  learning_rate: 0.001
+  weight_decay: 0
+  eval_freq: 500
+  scheduler_type: linear_warmup_cosine
+  scheduler_warmup_steps: 1000
+  scheduler_eta_min: 1.0e-6
+  # step-scheduler fields are unused but must be set (MISSING default).
+  scheduler_step_size: 1
+  scheduler_gamma: 1.0
+  grad_clip: 1.0   # loss is per-event normalised → O(1) scale, 1.0 is appropriate
+  early_stopping_patience: 6
+  early_stopping_min_delta: 0.001

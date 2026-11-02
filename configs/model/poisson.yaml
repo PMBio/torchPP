@@ -1,0 +1,3 @@
+# Homogeneous Poisson process — constant baseline intensity, no self-excitation.
+# Simplest baseline model; one rate parameter per event type.
+model_type: poisson

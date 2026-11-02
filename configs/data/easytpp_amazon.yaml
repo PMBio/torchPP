@@ -1,0 +1,5 @@
+dataset_type: easytpp
+dataset:
+  dataset_name: amazon
+  easytpp_root: easytpp
+  # 16 event types; train/dev/test: 6454 / 922 / 1851

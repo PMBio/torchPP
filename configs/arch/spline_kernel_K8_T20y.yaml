@@ -1,0 +1,10 @@
+# Spline kernel: K=8 knots, kernel extent = spline_kernel_T_factor × p95_inter_event_time.
+# Factor 5.0 gives wide coverage (~5× the typical long inter-event gap),
+# recommended general-purpose setting.  8 geometric knots provide good
+# early-time resolution.
+# Parameters per model: D*D*8 kernel heights (+ 1 tail delta).
+arch:
+  spline_kernel_K: 8
+  spline_kernel_T_factor: 5.0
+  spline_kernel_knot_schedule: geometric
+  spline_kernel_knot_power: 2.0

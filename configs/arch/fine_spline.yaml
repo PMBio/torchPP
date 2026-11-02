@@ -1,0 +1,7 @@
+# Fine-grained spline architecture — more knots for higher temporal resolution.
+# Increases model capacity and compute cost.
+arch:
+  spline_K: 10
+  spline_kernel_K: 8
+  spline_T_factor: 1.25
+  num_ci_integration_steps: 200

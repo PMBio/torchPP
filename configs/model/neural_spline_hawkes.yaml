@@ -1,0 +1,9 @@
+model_type: neural_spline_hawkes
+
+# Neural-spline kernel settings (uncomment to override defaults)
+# arch:
+#   neural_kernel_emb_dim: 32
+#   neural_kernel_n_hidden: 64
+#   neural_kernel_n_mlp_layers: 2
+#   spline_kernel_K: 4
+#   spline_kernel_T_factor: 5.0

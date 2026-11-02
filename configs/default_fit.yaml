@@ -1,0 +1,46 @@
+# Default training configuration for train.py.
+#
+# Compose by stacking -c flags (paths are resolved under configs/, .yaml optional):
+#   model/      one file per model type (e.g. spline_exp_hawkes, neural_thp)
+#   data/       data source (ukb_real_full, easytpp_<name>, mimic_iv_*)
+#   training/   transformer | very_long | easytpp_default | easytpp_neural
+#   batching/   bucket_default_small | bucket_numerical_small
+#   eval/       fast | normal | full | skip
+#   wandb/      online | offline | disabled
+#
+# Required: a model/ preset and a data/ preset must be supplied via -c.
+# Example:
+#   python train.py -c default_fit -c model/spline_exp_hawkes -c data/ukb_real_full
+
+defaults:
+ - batching/bucket_default_small
+ - training/very_long
+ - wandb/disabled
+ - eval/normal
+
+arch:
+  seed: null
+  num_ci_integration_steps: 100
+
+save:
+  path: null
+  overwrite: false
+  auto_increment: true
+
+stats:
+  enable: true
+  cache: true
+  cache_dir: tmp/dataset_stats
+  force_recompute: false
+  max_sequences: null
+  subsample_seed: 0
+
+profiling:
+  enable: false
+  steps: 20
+  output: profile_trace.json
+
+compile:
+  enable: false
+  mode: default
+  backend: inductor

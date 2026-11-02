@@ -1,0 +1,8 @@
+# Piecewise-constant Poisson process — step-function baseline intensity, no self-excitation.
+# More expressive than homogeneous Poisson; simpler than spline (no slopes).
+# arch.spline_K controls the number of bins.
+model_type: piecewise_constant
+
+arch:
+  spline_K: 5
+  spline_T_factor: 1.25

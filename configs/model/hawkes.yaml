@@ -1,0 +1,3 @@
+# Hawkes process — constant baseline + exponential excitation kernel.
+# Classic self-exciting point process with analytical cumulative intensity.
+model_type: hawkes

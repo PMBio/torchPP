@@ -1,0 +1,10 @@
+# Spline kernel: K=5 knots, kernel extent = spline_kernel_T_factor × p95_inter_event_time.
+# Factor 2.5 gives half the K=8 coverage — a compact-support setting with
+# fewer parameters and finer near-term resolution.  Useful as a cheaper
+# comparison against the K=8 variant.
+# Parameters per model: D*D*5 kernel heights (+ 1 tail delta).
+arch:
+  spline_kernel_K: 5
+  spline_kernel_T_factor: 2.5
+  spline_kernel_knot_schedule: geometric
+  spline_kernel_knot_power: 2.0

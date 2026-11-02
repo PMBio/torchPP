@@ -1,0 +1,5 @@
+arch:
+  spline_K: 5
+  spline_kernel_K: 5
+  spline_kernel_T_factor: 5.0
+  num_ci_integration_steps: 200

@@ -1,0 +1,15 @@
+# Enable early stopping — compose on top of any training preset.
+#
+# Usage examples:
+#   python train.py -c easytpp/default -c data/easytpp_taxi -c model/hawkes -c training/long -c training/early_stopping
+#   python train.py -c easytpp/default -c data/easytpp_taxi -c model/hawkes -c training/short -c training/early_stopping \
+#       training.early_stopping_patience=10
+#
+# The val loss (log-likelihood, higher = better) is checked every
+# training.eval_freq steps.  Training stops when the val LL has not
+# improved by at least early_stopping_min_delta * |best_val_ll| for
+# early_stopping_patience consecutive evaluations.
+# The best checkpoint (by val LL) is automatically restored at the end.
+training:
+  early_stopping_patience: 3      # stop after this many evals without improvement
+  early_stopping_min_delta: 0.001 # minimum relative improvement to count as new best

@@ -1,0 +1,10 @@
+# Grid-based metrics for trained checkpoints: RMSE, marginal Acc and marginal log p(d).
+# grid_points_per_unit_time and limit_test_size are set per dataset by
+# scripts/tuning/generate_main_run_commands.sh (ACTION=eval).
+eval:
+  run_test_eval: true
+  compute_marginal_type: true          # required for Acc, p(d) and the grid
+  integrate_marginal_via_grid: true    # trapezoidal cumulative intensity on the grid
+  grid_points_per_unit_time: 30000
+  limit_test_size: 500
+  eval_batch_size: 32                  # speed/memory only

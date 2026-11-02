@@ -1,0 +1,7 @@
+# Spline Poisson process — flexible spline baseline intensity, no self-excitation.
+# More expressive than inhomogeneous_poisson; arch.spline_K controls knot count.
+model_type: spline_poisson
+
+arch:
+  spline_K: 5
+  spline_T_factor: 1.25

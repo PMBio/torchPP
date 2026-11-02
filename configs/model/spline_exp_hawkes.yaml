@@ -1,0 +1,7 @@
+# Spline-baseline + exponential-kernel Hawkes process.
+# Most commonly used Hawkes variant; good balance of flexibility and speed.
+model_type: spline_exp_hawkes
+
+arch:
+  spline_K: 5
+  spline_T_factor: 1.25

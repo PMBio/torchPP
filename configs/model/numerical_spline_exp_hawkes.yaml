@@ -1,0 +1,8 @@
+# Numerical spline-baseline + exponential-kernel Hawkes process.
+# Like spline_exp_hawkes but forces numerical CI integration (reference / debugging).
+model_type: numerical_spline_exp_hawkes
+
+arch:
+  spline_K: 5
+  spline_T_factor: 1.25
+  num_ci_integration_steps: 100

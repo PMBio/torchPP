@@ -1,0 +1,7 @@
+dataset,targets,resolution,primary_bin,coarse_bin,tied_frac,note
+taxi,14420,1 s,1 s,10 s,0.0,97% of times on the 1 s grid
+stackoverflow,26117,float32 (2^-13 at t~1325),2^-13,10 x 2^-13,0.0049,times stored in float32 in the EasyTPP release
+retweet,39550,integer,1,10,0.0743,all times integer valued; zero gaps present in the EasyTPP release
+amazon,44141,none,0.01,0.1,0.0,minimum gap 0.0100; 12.4% of gaps in [0.010; 0.012)
+taobao,27955,1e-4 (gaps),1e-4,1e-3,0.0,Hugging Face release in float64; 87% of test gaps on a 1e-4 grid but absolute times not on a grid; bins anchored at the previous event; no zero gaps
+mimic_iv,94921,1 min (dequantized),1 min,5 min,0.0,events placed uniformly within their recorded minute; bins anchored at the recorded minute

@@ -1,0 +1,5 @@
+dataset_type: easytpp
+dataset:
+  dataset_name: taobao
+  easytpp_root: easytpp
+  # 17 event types; train/dev/test: 1300 / 200 / 500

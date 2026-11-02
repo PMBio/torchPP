@@ -1,0 +1,2 @@
+# Linear-baseline Hawkes process — linear (ramp) baseline + exponential kernel.
+model_type: linear_exp_hawkes

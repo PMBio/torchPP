@@ -1,0 +1,8 @@
+# Spline-baseline + spline-kernel Hawkes process.
+# Most flexible standard Hawkes variant; both baseline and kernel are splines.
+model_type: spline_spline_kernel
+
+arch:
+  spline_K: 5
+  spline_kernel_K: 4
+  spline_T_factor: 1.25

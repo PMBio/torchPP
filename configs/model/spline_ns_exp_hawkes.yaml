@@ -1,0 +1,8 @@
+# Spline-baseline + non-stationary exponential-kernel Hawkes process.
+# Both baseline and kernel α(t), β(t) vary over absolute time; Δt-shape stays
+# exponential. Kernel knots use the baseline-scale time anchor.
+model_type: spline_ns_exp_hawkes
+
+arch:
+  spline_K: 5          # baseline + kernel absolute-time knots
+  spline_T_factor: 1.25

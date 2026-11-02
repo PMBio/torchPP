@@ -1,0 +1,12 @@
+# Long training run — 10000 steps with slower LR decay.
+training:
+  num_steps: 10000
+  learning_rate: 1.0
+  weight_decay: 0.0
+  eval_freq: 500
+  scheduler_type: step
+  scheduler_step_size: 1000
+  scheduler_gamma: 0.5
+  grad_clip: 1.0
+  early_stopping_patience: 3     # 0 = disabled; set e.g. 10 to stop after 10 evals without improvement
+  early_stopping_min_delta: 0.001

@@ -1,0 +1,11 @@
+# Attentive Neural Hawkes Process (Yang et al., ICLR 2022) — attention encoder that
+# recomputes the state at each query time; ScaledSoftplus intensity. d_model =
+# arch.n_embd, heads = arch.n_head, layers = arch.n_layer, temporal-embedding size =
+# arch.attnhp_time_emb_size. Cumulative intensity is numerical (matching EasyTPP).
+# The training survival term uses num_ci_integration_steps trapezoid points in
+# every inter-event interval — 20 matches EasyTPP's loss_integral_num_sample_per_step.
+model_type: attnhp
+arch:
+  num_ci_integration_steps: 20
+  # Quadrature nodes per batch-folded attention pass; 0 = all at once (more memory).
+  attnhp_quadrature_chunk_size: 10

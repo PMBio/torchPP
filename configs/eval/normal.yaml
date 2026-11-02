@@ -1,0 +1,7 @@
+# Fast eval — small test subset, suitable for quick feedback during development.
+eval:
+  run_test_eval: true
+  limit_test_size: 1000
+  compute_marginal_type: true
+  eval_batch_size: 512
+  integrate_marginal_via_grid: true

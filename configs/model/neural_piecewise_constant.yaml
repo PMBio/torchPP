@@ -1,0 +1,6 @@
+# Neural Piecewise Constant Process — transformer-parametrized step-function intensity per inter-event interval.
+model_type: neural_piecewise_constant
+
+arch:
+  spline_K: 10
+  spline_T_factor: 1.25

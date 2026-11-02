@@ -1,0 +1,9 @@
+# MIMIC-IV ICU interventions, top-116 types, event times in float32 (knot sweep).
+# Build:
+#   python scripts/data_prep/prepare_mimic_iv_datasets.py \
+#       --datasets icu_interventions --float32 --out-root $TORCHPPDATA/mimic_iv
+dataset_type: mimic_iv
+dataset:
+  dataset_name: icu_interventions
+  mimic_root: mimic_iv
+  top_k_event_types: 116

@@ -1,0 +1,19 @@
+# Default evaluation configuration for evaluate.py.
+#
+# Compose by stacking -c flags:
+#   data/    data source (ukb_real_full, easytpp_*, mimic_iv_icu_interventions_top116)
+#   eval/    evaluation scope (fast | normal | full | skip)
+#
+# Example:
+#   python evaluate.py -c default_eval -c data/ukb_real_full -c eval/full \
+#       model_path=models/my_model.pth model_type=spline_exp_hawkes
+
+defaults:
+  - eval/normal
+
+arch:
+  seed: 42
+  num_ci_integration_steps: 100
+  spline_K: 5
+  spline_kernel_K: 4
+  spline_T_factor: 1.25

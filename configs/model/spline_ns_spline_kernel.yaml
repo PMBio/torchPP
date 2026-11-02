@@ -1,0 +1,10 @@
+# Spline-baseline + non-stationary spline-kernel Hawkes process.
+# Kernel Δt-shape is a linear spline whose heights vary over absolute time
+# (interpolated at the trigger's time); closed-form CI. Strongest non-neural control.
+model_type: spline_ns_spline_kernel
+
+arch:
+  spline_K: 5          # baseline knots
+  spline_ns_K: 5       # kernel absolute-time (non-stationary) knots
+  spline_kernel_K: 4   # kernel Δt knots
+  spline_T_factor: 1.25

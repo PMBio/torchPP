@@ -1,0 +1,3 @@
+# Override: 3 knots/bins for kernel spline / piecewise models
+arch:
+  spline_kernel_K: 3

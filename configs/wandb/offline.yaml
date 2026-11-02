@@ -1,0 +1,8 @@
+# W&B offline mode — logs locally, sync later with `wandb sync`.
+wandb:
+  enable: true
+  project: tpp_compare
+  entity: null
+  run_name: null
+  tags: null
+  mode: offline

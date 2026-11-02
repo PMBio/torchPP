@@ -1,0 +1,11 @@
+# MIMIC-IV ICU interventions, top-116 types, event times in float64 (main runs).
+# Same cohort, split seed and vocabulary as mimic_iv_icu_interventions_top116.yaml;
+# float64 keeps the 1e-6-day jitter that separates simultaneous events.
+# Build:
+#   python scripts/data_prep/prepare_mimic_iv_datasets.py \
+#       --datasets icu_interventions --out-root $TORCHPPDATA/mimic_iv_f64
+dataset_type: mimic_iv
+dataset:
+  dataset_name: icu_interventions
+  mimic_root: mimic_iv_f64
+  top_k_event_types: 116

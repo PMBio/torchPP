@@ -1,0 +1,2 @@
+# Neural Transformer Hawkes Process — transformer-parametrized intensity with softplus output.
+model_type: neural_thp

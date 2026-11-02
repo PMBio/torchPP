@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "TorchPP"
+repository-code: "https://github.com/PMBio/torchPP"
+license: MIT
+authors:
+  - family-names: Mehrtens
+    given-names: Hendrik
+    affiliation: "German Cancer Research Center (DKFZ); Goethe University Frankfurt"
+    email: hendrikalexander.mehrtens@dkfz-heidelberg.de
+  - family-names: Büttner
+    given-names: Florian
+    affiliation: "German Cancer Research Center (DKFZ); Goethe University Frankfurt"
+  - family-names: Stegle
+    given-names: Oliver
+    affiliation: "German Cancer Research Center (DKFZ); European Molecular Biology Laboratory (EMBL); Heidelberg University"
+preferred-citation:
+  type: conference-paper
+  title: "Flexible Intensities Matter: A Comprehensive Re-evaluation of Hawkes Processes and Neural Temporal Point Processes"
+  authors:
+    - family-names: Mehrtens
+      given-names: Hendrik
+      affiliation: "German Cancer Research Center (DKFZ); Goethe University Frankfurt"
+      email: hendrikalexander.mehrtens@dkfz-heidelberg.de
+    - family-names: Büttner
+      given-names: Florian
+      affiliation: "German Cancer Research Center (DKFZ); Goethe University Frankfurt"
+    - family-names: Stegle
+      given-names: Oliver
+      affiliation: "German Cancer Research Center (DKFZ); European Molecular Biology Laboratory (EMBL); Heidelberg University"
+  collection-title: "Advances in Neural Information Processing Systems"
+  conference:
+    name: "NeurIPS 2026"
+  year: 2026

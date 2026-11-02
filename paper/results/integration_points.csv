@@ -1,0 +1,9 @@
+dataset,model_type,seed,n_points,n_sequences,max_sequence_length,marginal_time_ll,cond_type_ll,joint_ll,cond_top1_accuracy
+taobao,inhibitive_const_exp_hawkes,0,100,500,,2.615916,-1.429057,1.186858,0.61059
+taobao,inhibitive_const_exp_hawkes,0,10000,500,,2.609895,-1.429057,1.180838,0.61059
+taobao,inhibitive_spline_spline_kernel,0,100,500,,2.659711,-1.464891,1.19482,0.61359
+taobao,inhibitive_spline_spline_kernel,0,10000,500,,2.660308,-1.464891,1.195418,0.61359
+mimic_iv,inhibitive_const_exp_hawkes,0,100,200,316,3.860635941864996,-2.680812511316286,1.17982343054871,0.3239436745643616
+mimic_iv,inhibitive_const_exp_hawkes,0,3000,200,316,3.8311825670686073,-2.680812511316286,1.1503700557523222,0.3239436745643616
+mimic_iv,inhibitive_spline_spline_kernel,0,100,200,316,3.856379661867841,-2.575691316491644,1.2806883453761972,0.3455791771411896
+mimic_iv,inhibitive_spline_spline_kernel,0,3000,200,316,3.831561685724433,-2.575691316491644,1.25587036923279,0.3455791771411896

@@ -1,0 +1,8 @@
+model_type: neural_hawkes
+
+# Neural kernel settings (uncomment to override defaults)
+# arch:
+#   neural_kernel_emb_dim: 32
+#   neural_kernel_time_embd_dim: 32
+#   neural_kernel_n_hidden: 64
+#   neural_kernel_n_mlp_layers: 2

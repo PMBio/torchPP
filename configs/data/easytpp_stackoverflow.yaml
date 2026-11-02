@@ -1,0 +1,5 @@
+dataset_type: easytpp
+dataset:
+  dataset_name: stackoverflow
+  easytpp_root: easytpp
+  # 22 event types; train/dev/test: 1401 / 401 / 401

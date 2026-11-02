@@ -1,0 +1,2 @@
+# EasyTPP-replica Self-Attentive Hawkes Process — GELU/Softplus params, ScaledSoftplus activation, numerical CI.
+model_type: easytpp_sahp

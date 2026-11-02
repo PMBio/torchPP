@@ -1,0 +1,4 @@
+dataset_type: mimic_iv
+dataset:
+  dataset_name: icu_interventions
+  mimic_root: mimic_iv

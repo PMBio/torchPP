@@ -1,0 +1,2 @@
+# Inhomogeneous Poisson process — time-varying baseline (linear ramp), no self-excitation.
+model_type: inhomogeneous_poisson
