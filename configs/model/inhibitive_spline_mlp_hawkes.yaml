@@ -1,0 +1,10 @@
+model_type: inhibitive_spline_mlp_hawkes
+training_preset: neural   # training/neural.yaml (overridden by -c training/... and training.*=...)
+
+# MLP kernel settings (uncomment to override defaults). Experimental.
+# arch:
+#   kernel:
+#     emb_dim: 32
+#     time_emb_dim: 32
+#     n_hidden: 64
+#     n_layers: 2

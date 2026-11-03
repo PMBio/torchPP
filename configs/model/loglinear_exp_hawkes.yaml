@@ -1,0 +1,3 @@
+# Linear-baseline Hawkes process — linear (ramp) baseline + exponential kernel.
+model_type: loglinear_exp_hawkes
+training_preset: classical   # training/classical.yaml (overridden by -c training/... and training.*=...)

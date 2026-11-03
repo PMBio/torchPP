@@ -1,0 +1,7 @@
+# Full eval — the entire test set (use for reported numbers).
+eval:
+  run_test_eval: true
+  limit_test_size: null   # null → use all test sequences
+  compute_marginal_type: true
+  eval_batch_size: 64
+  integrate_marginal_via_grid: true

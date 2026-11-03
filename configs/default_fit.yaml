@@ -1,0 +1,60 @@
+# Default training configuration for train.py.
+#
+# Stack presets with -c (resolved under configs/, .yaml optional; later wins):
+#   model/      one file per model type; it also selects the family's training defaults
+#               (training/classical or training/neural)
+#   data/       a benchmark dataset (taxi, stackoverflow, retweet, amazon, taobao, earthquake, volcano)
+#   training/   classical | neural | smoke
+#   eval/       fast | full
+#   wandb/      disabled | offline | online
+# Every field with its default and a short explanation: configs/demo.yaml.
+#
+# Example:
+#   python train.py -c default_fit -c model/spline_exp_hawkes -c data/taxi
+
+defaults:
+  - wandb/disabled
+
+arch:
+  seed: null
+
+batching:
+  batch_size: 128
+  use_bucket_batching: true
+  num_buckets: 10
+  dynamic_batch_size: true
+  target_total_events: null
+  max_sequence_length: null
+  truncation_strategy: right
+  analyze_lengths: false
+  accumulate_gradients: 1
+
+eval:
+  run_test_eval: true
+  limit_test_size: 1000      # first 1000 test sequences; -c eval/full for reported numbers
+  compute_marginal_type: true
+  eval_batch_size: 512
+  integrate_marginal_via_grid: true
+
+save:
+  path: null
+  overwrite: false
+  auto_increment: true
+
+stats:
+  enable: true
+  cache: true
+  cache_dir: tmp/dataset_stats
+  force_recompute: false
+  max_sequences: null
+  subsample_seed: 0
+
+profiling:
+  enable: false
+  steps: 20
+  output: profile_trace.json
+
+compile:
+  enable: false
+  mode: default
+  backend: inductor

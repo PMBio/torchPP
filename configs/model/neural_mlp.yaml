@@ -1,0 +1,12 @@
+model_type: neural_mlp
+training_preset: neural   # training/neural.yaml (overridden by -c training/... and training.*=...)
+
+arch:
+  ci:
+    # 3x more quadrature points than the default 100 to reduce survival-term
+    # underestimation for the flexible MLP intensity (no analytical CI available).
+    n_points: 300
+  # head:              # MLP intensity head (defaults shown)
+  #   n_hidden: 128
+  #   n_layers: 2
+  #   time_emb_dim: null  # null = the encoder's n_embd

@@ -1,0 +1,4 @@
+# Transformer Hawkes Process (Zuo et al., 2020): THP intensity head on the shared
+# TorchPP transformer encoder. Scaled-softplus intensity, numerical cumulative intensity.
+model_type: thp
+training_preset: neural   # training/neural.yaml (overridden by -c training/... and training.*=...)

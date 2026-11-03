@@ -1,0 +1,8 @@
+# Neural Hawkes Process (Mei & Eisner, NeurIPS 2017) — continuous-time LSTM with a
+# self-modulating ScaledSoftplus intensity. Hidden size = arch.encoder.hidden_dim.
+# Cumulative intensity is numerical (ScaledSoftplus has no closed form).
+model_type: nhp
+training_preset: neural   # training/neural.yaml (overridden by -c training/... and training.*=...)
+arch:
+  ci:
+    n_points: 20   # trapezoid points in every inter-event interval

@@ -1,0 +1,3 @@
+# Inhomogeneous Poisson process — time-varying baseline (linear ramp), no self-excitation.
+model_type: loglinear_poisson
+training_preset: classical   # training/classical.yaml (overridden by -c training/... and training.*=...)

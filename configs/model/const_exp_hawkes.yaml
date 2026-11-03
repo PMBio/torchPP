@@ -1,0 +1,4 @@
+# Hawkes process — constant baseline + exponential excitation kernel.
+# Classic self-exciting point process with analytical cumulative intensity.
+model_type: const_exp_hawkes
+training_preset: classical   # training/classical.yaml (overridden by -c training/... and training.*=...)

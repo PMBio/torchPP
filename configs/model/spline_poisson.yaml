@@ -1,0 +1,9 @@
+# Spline Poisson process — flexible spline baseline intensity, no self-excitation.
+# More expressive than loglinear_poisson; arch.baseline.num_knots controls knot count.
+model_type: spline_poisson
+training_preset: classical   # training/classical.yaml (overridden by -c training/... and training.*=...)
+
+arch:
+  baseline:
+    num_knots: 5
+    T_factor: 1.25

@@ -1,0 +1,9 @@
+# Neural Piecewise Constant Process — transformer-parametrized step-function intensity per inter-event interval.
+# Bin count and extent over the time since the last event: arch.head.*
+model_type: neural_piecewise_constant
+training_preset: neural   # training/neural.yaml (overridden by -c training/... and training.*=...)
+
+arch:
+  head:
+    num_bins: 10
+    T_factor: 5.0

@@ -1,0 +1,5 @@
+dataset_type: benchmark
+dataset:
+  dataset_name: taxi
+  benchmark_root: benchmarks
+  # 10 event types; train/val/test: 1400 / 200 / 400

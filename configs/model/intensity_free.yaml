@@ -1,0 +1,6 @@
+# IntensityFree (Shchur et al., ICLR 2020) — log-normal mixture on the inter-event
+# time, mark categorical independent of time given history, with a GRU
+# encoder as in the original; cumulative intensity is the closed-form -log S of the
+# mixture. Set arch.encoder.type=transformer for a shared-encoder comparison.
+model_type: intensity_free
+training_preset: neural   # training/neural.yaml (overridden by -c training/... and training.*=...)

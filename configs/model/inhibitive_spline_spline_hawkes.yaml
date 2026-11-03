@@ -1,0 +1,13 @@
+# Inhibitive Hawkes — spline baseline + spline kernel. Clamping function applied to raw intensity sum.
+# Inhibitive variant of spline_spline_hawkes; both baseline and kernel are splines.
+# Uses numerical cumulative-intensity integration.
+model_type: inhibitive_spline_spline_hawkes
+training_preset: classical   # training/classical.yaml (overridden by -c training/... and training.*=...)
+
+arch:
+  clamping_fn: softplus
+  baseline:
+    num_knots: 5
+    T_factor: 1.25
+  kernel:
+    num_knots: 4

@@ -1,0 +1,11 @@
+# Spline-baseline + spline-kernel Hawkes process.
+# Most flexible standard Hawkes variant; both baseline and kernel are splines.
+model_type: spline_spline_hawkes
+training_preset: classical   # training/classical.yaml (overridden by -c training/... and training.*=...)
+
+arch:
+  baseline:
+    num_knots: 5
+    T_factor: 1.25
+  kernel:
+    num_knots: 4

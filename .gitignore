@@ -1,0 +1,41 @@
+# Data & model artifacts
+*.pth
+*.pt
+*.pkl
+*.bin
+*.csv
+
+# Output directories
+/models/
+/wandb/
+/checkpoints/
+/logs/
+/tmp/
+/results/
+
+
+# Python build artifacts
+*.egg-info/
+*.egg_info/
+/build/
+/dist/
+__pycache__/
+.pytest_cache/
+.venv/
+
+# Editor & IDE
+.vscode/
+.claude/
+.idea/
+
+
+# Misc
+**/archive/
+profiler_logs/
+*.png
+!docs/**/*.png
+
+*.npz
+
+# Jupyter
+.ipynb_checkpoints/

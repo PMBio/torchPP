@@ -1,0 +1,4 @@
+# Self-Attentive Hawkes Process (Zhang et al., 2020): SAHP intensity head on the shared
+# TorchPP transformer encoder. GELU/softplus parameters, scaled-softplus intensity, numerical cumulative intensity.
+model_type: sahp
+training_preset: neural   # training/neural.yaml (overridden by -c training/... and training.*=...)

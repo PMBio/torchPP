@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "TorchPP: multivariate temporal point processes in PyTorch"
+version: 0.1.0
+repository-code: "https://github.com/PMBio/torchPP"
+license:
+  - MIT
+  - Apache-2.0
+authors:
+  - family-names: Mehrtens
+    given-names: Hendrik
+    affiliation: "German Cancer Research Center (DKFZ); Goethe University Frankfurt"
+    email: hendrikalexander.mehrtens@dkfz-heidelberg.de
+  - family-names: Büttner
+    given-names: Florian
+    affiliation: "German Cancer Research Center (DKFZ); Goethe University Frankfurt"
+  - family-names: Stegle
+    given-names: Oliver
+    affiliation: "German Cancer Research Center (DKFZ); European Molecular Biology Laboratory (EMBL); Heidelberg University"
+keywords:
+  - temporal point processes
+  - Hawkes processes
+  - PyTorch

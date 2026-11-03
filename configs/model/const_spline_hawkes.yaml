@@ -1,0 +1,8 @@
+# Constant-baseline + spline-kernel Hawkes process.
+# Spline kernel allows flexible excitation decay shapes.
+model_type: const_spline_hawkes
+training_preset: classical   # training/classical.yaml (overridden by -c training/... and training.*=...)
+
+arch:
+  kernel:
+    num_knots: 4

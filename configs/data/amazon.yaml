@@ -1,0 +1,5 @@
+dataset_type: benchmark
+dataset:
+  dataset_name: amazon
+  benchmark_root: benchmarks
+  # 16 event types; train/val/test: 6454 / 922 / 1851

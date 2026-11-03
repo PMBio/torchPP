@@ -1,0 +1,134 @@
+# Every configuration field with its value and a one-line explanation.
+# A complete, runnable starting point:
+#   python train.py -c demo                        # Const./Exp Hawkes on Taxi
+#   python train.py -c demo model_type=thp arch.encoder.n_layers=2 training.learning_rate=0.01
+# Copy it and edit, or stack other presets on top (later wins). Schema and docstrings:
+# torchpp/training/config.py and torchpp/training/arch.py.
+
+model_type: const_exp_hawkes   # one of VALID_MODEL_TYPES (docs/models.md); alias: hawkes
+device: auto                   # auto | cpu | cuda | cuda:<index>
+
+# --- data --------------------------------------------------------------------------------
+dataset_type: benchmark        # a registered dataset loader (built in: benchmark)
+dataset_module: null           # module imported first, to register your own dataset (e.g. my_pkg.data)
+dataset:                       # passed to the loader; keys depend on dataset_type
+  dataset_name: taxi           # benchmark: taxi | stackoverflow | retweet | amazon | taobao | earthquake | volcano
+  benchmark_root: benchmarks   # benchmark: folder under $TORCHPPDATA
+  limit_train_size: null       # use only the first N sequences of each split (any dataset)
+  limit_val_size: null
+  limit_test_size: null
+
+# --- model architecture ------------------------------------------------------------------
+# Each model_type has its own arch fields (torchpp/training/arch.py); fields the selected
+# model does not have are rejected with the list of valid ones. Shared by all models:
+arch:
+  seed: null       # weight-initialisation and training seed; null = random (recorded in the checkpoint)
+  ci: {}           # intensity-based models: CIConfig overrides, e.g. {n_points: 200, rule: trapezoidal}
+                   # (numerically integrated models use n_points: 100 unless set)
+  sampling: {}     # SamplingConfig overrides, e.g. {mode: thinning}
+# Model-specific sections and their defaults (add the ones of your model_type under arch:):
+#   baseline:        # spline / piecewise baselines (spline_*, piecewise_*, inhibitive_spline_*)
+#     num_knots: 5
+#     T_factor: 1.0  # extent = factor × 95th percentile of the sequence duration
+#   kernel:          # spline / piecewise kernels (*_spline_hawkes, const_piecewise_hawkes)
+#     num_knots: 4
+#     T_factor: 5.0  # extent = factor × 95th percentile of the inter-event time
+#     knot_schedule: geometric   # uniform | geometric (denser near 0)
+#     knot_power: 2.0            # exponent of the geometric schedule
+#   kernel:          # inhibitive_spline_mlp_hawkes (MLP over type and lag embeddings)
+#     emb_dim: 32
+#     time_emb_dim: 32
+#     n_hidden: 64
+#     n_layers: 2
+#   kernel:          # inhibitive_spline_mlpspline_hawkes: the spline-kernel fields plus emb_dim, n_hidden, n_layers
+#   clamping_fn: softplus        # inhibitive_* models: softplus | relu | exp
+#   encoder:         # neural_*, thp, sahp (shared transformer); intensity_free adds type: gru | transformer
+#     n_layers: 4
+#     n_heads: 4
+#     n_embd: 64
+#     dropout: 0.1
+#   encoder:         # attnhp: the transformer fields plus time_emb_dim: 16, use_layer_norm: false
+#   encoder:         # nhp
+#     hidden_dim: 64
+#   head:            # neural_spline / neural_piecewise_constant: bins over the time since the last event
+#     num_bins: 4
+#     T_factor: 5.0
+#     knot_schedule: geometric
+#     knot_power: 2.0
+#     smoothness_reg: 0.0        # neural_spline only: penalty on second differences of the heights
+#   head:            # neural_mlp
+#     n_hidden: 128
+#     n_layers: 2
+#     time_emb_dim: null         # null = the encoder's n_embd
+#   head:            # intensity_free
+#     num_mix_components: 8
+
+# --- training ----------------------------------------------------------------------------
+training:
+  num_steps: 40000             # optimisation steps
+  learning_rate: 0.1           # classical models ~0.1, neural models ~0.01
+  weight_decay: 0.0            # AdamW weight decay
+  eval_freq: 250               # validation every N steps
+  scheduler_type: linear_warmup_cosine  # step | cosine | linear_warmup_cosine | none
+  scheduler_warmup_steps: 500  # linear warmup (linear_warmup_cosine)
+  scheduler_eta_min: 1.0e-3    # final learning rate of the cosine schedules
+  scheduler_step_size: 1       # step schedule: decay every N steps
+  scheduler_gamma: 1.0         # step schedule: decay factor
+  grad_clip: 1.0               # gradient-norm clipping
+  early_stopping_patience: 4   # stop after N validations without improvement (0 = off)
+  early_stopping_min_delta: 0.001  # relative improvement that counts as better
+
+# --- batching ----------------------------------------------------------------------------
+batching:
+  batch_size: 128
+  use_bucket_batching: true    # group sequences of similar length
+  num_buckets: 10
+  dynamic_batch_size: true     # adapt the batch size to the sequence length
+  target_total_events: null    # events per dynamic batch; null = batch_size × median length
+  max_sequence_length: null    # truncate longer sequences; null = no truncation
+  truncation_strategy: right   # right (keep the first events) | left (keep the last) | random
+  analyze_lengths: false       # print a sequence-length analysis
+  accumulate_gradients: 1      # optimiser step every N batches
+
+# --- evaluation --------------------------------------------------------------------------
+eval:
+  run_test_eval: true          # evaluate on the test split after training
+  limit_test_size: 1000        # first N test sequences; null = all
+  compute_marginal_type: true  # grid-based metrics (RMSE, marginal accuracy); slow on CPU
+  eval_batch_size: 512
+  integrate_marginal_via_grid: true  # trapezoidal cumulative intensity on the grid
+  grid_points_per_unit_time: 200.0   # grid density for the marginal metrics
+
+# --- output ------------------------------------------------------------------------------
+save:
+  path: null                   # checkpoint path; null = $TORCHPPMODELS/<dataset_type>/<dataset_name>/<run>.pth
+  overwrite: false
+  auto_increment: true         # add _1, _2, ... instead of overwriting
+  checkpoint_freq: 0           # write a resumable checkpoint every N steps (0 = off)
+  resume: false                # resume from <path>.ckpt when it exists
+
+stats:                         # dataset statistics (time scale, initial values)
+  enable: true
+  cache: true                  # cache them on disk
+  cache_dir: tmp/dataset_stats
+  force_recompute: false
+  max_sequences: null          # estimate from at most N training sequences
+  subsample_seed: 0
+
+wandb:
+  enable: false                # Weights & Biases logging
+  project: torchpp
+  entity: null
+  run_name: null               # null = generated
+  tags: null
+  mode: offline                # online | offline
+
+profiling:
+  enable: false                # torch profiler trace of the first steps
+  steps: 20
+  output: profile_trace.json
+
+compile:
+  enable: false                # torch.compile
+  mode: default
+  backend: inductor

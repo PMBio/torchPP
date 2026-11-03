@@ -1,0 +1,4 @@
+dataset_type: benchmark
+dataset:
+  dataset_name: volcano
+  # 1 event type; train/val/test: 400 / 50 / 181

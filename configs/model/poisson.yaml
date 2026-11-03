@@ -1,0 +1,4 @@
+# Homogeneous Poisson process — constant baseline intensity, no self-excitation.
+# Simplest baseline model; one rate parameter per event type.
+model_type: poisson
+training_preset: classical   # training/classical.yaml (overridden by -c training/... and training.*=...)

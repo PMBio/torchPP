@@ -1,0 +1,4 @@
+dataset_type: benchmark
+dataset:
+  dataset_name: earthquake
+  # 7 event types; train/val/test: 3000 / 400 / 900

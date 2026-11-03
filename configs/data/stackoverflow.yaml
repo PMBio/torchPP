@@ -1,0 +1,5 @@
+dataset_type: benchmark
+dataset:
+  dataset_name: stackoverflow
+  benchmark_root: benchmarks
+  # 22 event types; train/val/test: 1401 / 401 / 401

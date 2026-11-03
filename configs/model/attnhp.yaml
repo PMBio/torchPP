@@ -1,0 +1,10 @@
+# Attentive Neural Hawkes Process (Yang et al., ICLR 2022) — attention encoder that
+# recomputes the state at each query time; ScaledSoftplus intensity. Encoder settings:
+# arch.encoder.{n_layers, n_heads, n_embd (model width), dropout, time_emb_dim, use_layer_norm}.
+# Cumulative intensity is numerical.
+model_type: attnhp
+training_preset: neural   # training/neural.yaml (overridden by -c training/... and training.*=...)
+arch:
+  ci:
+    n_points: 20     # trapezoid points in every inter-event interval
+    chunk_size: 10   # quadrature nodes per batch-folded attention pass; null = all at once (more memory)

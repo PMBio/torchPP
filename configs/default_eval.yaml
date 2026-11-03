@@ -1,0 +1,16 @@
+# Default evaluation configuration for evaluate.py.
+#
+# A checkpoint written by train.py describes its model, architecture and dataset, so
+# model_path is enough. Stack presets with -c:
+#   data/    evaluate on another dataset
+#   eval/    fast | full
+#
+# Example:
+#   python evaluate.py -c default_eval -c eval/full model_path=models/benchmark/taxi/thp.pth
+
+eval:
+  run_test_eval: true
+  limit_test_size: 1000      # first 1000 test sequences; -c eval/full for reported numbers
+  compute_marginal_type: true
+  eval_batch_size: 512
+  integrate_marginal_via_grid: true

@@ -1,0 +1,9 @@
+# Piecewise-constant-baseline + exponential-kernel Hawkes process.
+# Step-function baseline with flexible excitation kernel.
+model_type: piecewise_exp_hawkes
+training_preset: classical   # training/classical.yaml (overridden by -c training/... and training.*=...)
+
+arch:
+  baseline:
+    num_knots: 5
+    T_factor: 1.25

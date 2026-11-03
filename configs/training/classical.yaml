@@ -1,0 +1,17 @@
+# Training defaults for Poisson and Hawkes models (additive and inhibitive).
+# Linear warmup + cosine decay to lr/100, early stopping on the validation log-likelihood.
+# Values follow the configuration used for the standard benchmarks.
+# Model presets select this file via `training_preset: classical`.
+training:
+  num_steps: 40000
+  learning_rate: 0.1
+  weight_decay: 0.0
+  eval_freq: 250
+  scheduler_type: linear_warmup_cosine
+  scheduler_warmup_steps: 500
+  scheduler_eta_min: 1.0e-3
+  scheduler_step_size: 1   # unused by the cosine schedule
+  scheduler_gamma: 1.0     # unused by the cosine schedule
+  grad_clip: 1.0
+  early_stopping_patience: 4
+  early_stopping_min_delta: 0.001

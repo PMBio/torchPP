@@ -1,0 +1,4 @@
+# Neural Poisson Process — transformer-parametrized constant intensity per inter-event interval.
+model_type: neural_poisson
+training_preset: neural   # training/neural.yaml (overridden by -c training/... and training.*=...)
+

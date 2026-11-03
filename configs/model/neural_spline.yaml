@@ -1,0 +1,11 @@
+# Neural Spline Process — transformer-parametrized linear spline intensity per inter-event interval.
+# Knot count, extent and schedule over the time since the last event: arch.head.*
+model_type: neural_spline
+training_preset: neural   # training/neural.yaml (overridden by -c training/... and training.*=...)
+
+arch:
+  head:
+    num_bins: 10
+    T_factor: 5.0
+    knot_schedule: geometric
+    knot_power: 2.0

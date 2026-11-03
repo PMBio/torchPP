@@ -1,0 +1,10 @@
+# Piecewise-constant Poisson process — step-function baseline intensity, no self-excitation.
+# More expressive than homogeneous Poisson; simpler than spline (no slopes).
+# arch.baseline.num_knots controls the number of bins.
+model_type: piecewise_poisson
+training_preset: classical   # training/classical.yaml (overridden by -c training/... and training.*=...)
+
+arch:
+  baseline:
+    num_knots: 5
+    T_factor: 1.25

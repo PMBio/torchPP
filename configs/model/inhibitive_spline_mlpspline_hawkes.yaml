@@ -1,0 +1,11 @@
+model_type: inhibitive_spline_mlpspline_hawkes
+training_preset: neural   # training/neural.yaml (overridden by -c training/... and training.*=...)
+
+# MLP-predicted spline kernel settings (uncomment to override defaults). Experimental.
+# arch:
+#   kernel:
+#     num_knots: 4
+#     T_factor: 5.0
+#     emb_dim: 32
+#     n_hidden: 64
+#     n_layers: 2
