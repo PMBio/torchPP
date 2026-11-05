@@ -1,7 +1,8 @@
 # Flexible Intensities Matter
 
 This branch reproduces the NeurIPS 2026 paper *Flexible Intensities Matter: A Comprehensive
-Re-evaluation of Hawkes Processes and Neural Temporal Point Processes*.
+Re-evaluation of Hawkes Processes and Neural Temporal Point Processes*
+([arXiv:2611.06348](https://arxiv.org/abs/2611.06348)).
 
 It contains **TorchPP**, a PyTorch library for multivariate temporal point processes (TPPs):
 classical Hawkes, neural and hybrid models behind one intensity / cumulative-intensity /
@@ -214,7 +215,8 @@ evaluate.py  evaluation of a saved checkpoint
                Processes and Neural Temporal Point Processes},
   author    = {Mehrtens, Hendrik and B{\"u}ttner, Florian and Stegle, Oliver},
   booktitle = {Advances in Neural Information Processing Systems},
-  year      = {2026}
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2611.06348}
 }
 ```
 
