@@ -259,7 +259,21 @@ evaluate.py  evaluation of a saved checkpoint
 
 ## Citation
 
-If you use TorchPP, please cite the software as given in [CITATION.cff](CITATION.cff).
+If you use TorchPP, please cite the paper in which it was introduced,
+[Flexible Intensities Matter](https://arxiv.org/abs/2611.06348) (NeurIPS 2026), and the software as
+given in [CITATION.cff](CITATION.cff). The code for the paper is on the
+[`neurips2026`](https://github.com/PMBio/torchPP/tree/neurips2026) branch.
+
+```bibtex
+@inproceedings{mehrtens2026flexible,
+  title     = {Flexible Intensities Matter: A Comprehensive Re-evaluation of Hawkes
+               Processes and Neural Temporal Point Processes},
+  author    = {Mehrtens, Hendrik and B{\"u}ttner, Florian and Stegle, Oliver},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2611.06348}
+}
+```
 
 ## License
 
